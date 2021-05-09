@@ -1,0 +1,83 @@
+Règles:
+_Age (Age_moyen):
+	L'individu meurt au bout de Age_moyen Générations
+_Naissance (Max_enfants_generation, Max_enfant_individu):
+	Un individu nait dans toutes les cases vides proches si il y a un inidividu de la même espece proche et tant que le nombre de naissancepar génération et au 
+total n'a pas été dépassé.
+
+Chances_de_mort -> Age -> Nourriture -> Naissance -> Surpopulation
+
+nom, color, Age, Naissance, Nourriture, Surpopulation, Mort_spontanee, Age_moyen, Max_enfant_generation, Max_enfants_individu, Espece_Nourriture, Nourriture_par_generation, Generation_sans_manger, Max_individus, Chance_de_mort, Etat_a_la_naissance
+Paramètres de Créaton d'espèce:
+1) Nom de l'espece
+2) Couleur de l'espece (code html ou en anglais)
+
+
+3) Règle Age utilisée? (True, False)
+	Si l'age de l'individu excede l'age limite de l'espèce, il meurt.
+4) Règle Naissance est elle utilisée? (True, False)
+	Si il y a un individu de la même espèce sur une case adjacente, si il y au moins une case adjacente vide, crée un nouvel individu dans la case vide.
+	SSI les deux individus sont en age de procréer,
+	SSI l'individu n'a pas excédé son nombre d'enfant au cours de sa vie,
+	SSI l'individu n'a pas excédé son nombre d'enfant au cours de cette génération.
+	SSI l'individu ne s'est pas reproduit depuis 3 générations (Repos_Post_Naissance)
+5) Règle Nourriture utilisée? (True, False)
+	Si l'individu n'a pas mangé depuis plus de générations qu'il ne peut survivre, il décède,
+	Si l'individu n'a pas mangé autant qu'il devrait manger par génération, il est considéré comme n'ayant pas mangé,
+	L'individu tue les espèces appartenant à sa liste de proie si elles lui sont adjacentes.
+6) Règle Surpopulation utilisée? (True, False)
+	Si il y a plus d'individus de la même espèce que le maximum possible dans l'environnement proche de l'individus, il meurt.
+7) Règle Mort_Spontanée? (True, False) 
+	L'individus a une certaine probabilité de décès à chaque génération
+8) Règle Naissance_alternative? (True, False)
+	Si il y a strictement plus de 3 individus de la même espèce (Min_individu_naissance2) dans l'environnement proche, 
+	Si strictement plus de 2 d'entre eux (Min_matures_naissance2) ont l'age naicessaire pour se reproduire (Age_mature_naissance2)
+	Si il y a strictement moins de 4 individus (Max_perturbateurs_naissance2) appartenant à d'autres espèce dans l'environnement proche, un individu nait ici.
+9) Règle Proie (alternative à naissance)?
+	Si il y au moins Max_predateur prédateurs dans l'environnement proche, l'individu meurt
+10) Règle Predateur (alternative à naissance)?
+	Si il y au moins Max_predateur_partage individus de la même espèce dans l'environnement proche et Min_proies proies dans l'environnement proche ou moins, l'individu meurt.
+
+
+8) [Age] Age limite de l'espèce
+9) [Naissance] Maximum d'enfants par individu et par génération.
+10) [Naissance] Maximum d'enfant par individu
+11) [Naissance] Age de Procréation
+11) [Naissance] Nombre de generations pendant lesquelles l'individu ne peut se reproduire après avoir enfanté.
+11) [Nourriture] Liste des noms des espèces proies
+12) [Nourriture] Nombre de proie que doit dévorer l'individu par génération pour être rassasié
+13) [Nourriture] Nombre de génération que peut survivre un individu sans manger
+14) [Surpopulation] Nombre maximal d'individus dans l'environnement proche à partir duquel l'individu meurt.
+15) [Mort_spontanee] Probabilité de mort par génération * 100.
+16) [Naissance_alternative] Minimum d'individus de la même espèce dans l'environnement proche pour se reproduire
+17) [Naissance_alternative] Minimum d'individus matures de la même espèce dans l'environnement proche pour se reproduire
+18) [Naissance_alternative] Age à partir duquel l'individu est considéré comme mature
+19) [Naissance_alternative] Maximum d'inidividus appartenant à une autre espece à partir duquel il n'y a pas de reproduction
+20) [Proie] Nombre de prédateurs dans l'environnement proche à partir duquel l'individu meurt dévoré.
+21) [Predateur] Nombre d'individus de la même espèce à partir duquel l'individu peut mourir de faim
+22) [Predateur] Nombre de proies dans l'environnement proche en dessous duquel si l'individu est en sur-nombre (voir ci dessus), il meurt de faim.
+
+
+16) Etat à la naissance: Dictionnaire renseignant l'état à la naissance de l'individu: {"Age_moyen" : 0, "Max_enfants_generation" : 0, "Max_enfants_individu" : 0, "Nourriture_par_generation" : 0, "Generation_sans_manger" : 5, "Mort" : False}
+
+Grille en mémoire et affichage:
+y
+
+3	a	b	c
+
+2	d	e	f
+
+1	g	h	i
+
+0	1	2	3	x
+
+Affichage:
+y
+
+0
+
+1
+
+2
+
+30	1	2	3	x

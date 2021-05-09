@@ -1,0 +1,4 @@
+Config["EspeceList"]["Vide"] = Espece("Vide", (0,0,0), False, False, False, False, False, Config["NaissanceAlternative"], False, False, 0, 0, 0, [""], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, {})
+Config["EspeceList"]["shark"] = Espece("shark",(0,0,254), True, True, True, True, True, False, False, True, 20, 1, 10, ["fish"], 1, 5, 8, 1,9, 0, 0, 0, 0, 99, 0, {"Age_moyen" : 0, "Max_enfants_generation" : 0, "Max_enfants_individu" : 0, "Nourriture_par_generation" : 0, "Generation_sans_manger" : 0, "Mort" : False})
+Config["EspeceList"]["fish"] = Espece("fish",(254,0,0), True, False, False, True, False, False, True, True, 10, 0, 0, [], 0, 0, 8, 0,4, 3, 2, 4, 5, 99, 0, {"Age_moyen" : 0, "Max_enfants_generation" : 0, "Max_enfants_individu" : 0, "Nourriture_par_generation" : 0, "Generation_sans_manger" : 0, "Mort" : False})
+Config["RepartitionList"] = (("Vide", 50), ("shark", 25), ("fish", 25))

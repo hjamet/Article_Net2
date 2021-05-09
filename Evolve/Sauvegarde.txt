@@ -1,0 +1,18 @@
+        if self.Naissance == True:
+            accouplement = 0
+            espace = 0
+            for individu in env_proche:
+                if individu["espece"] == self.Nom and individu["etat"]["Mort"] == False:
+                    accouplement = 1
+                if individu["espece"] == "Vide":
+                    espace = 1
+            if accouplement == 1 and espace == 1:
+                i = -1
+                for individu in env_proche:
+                    i += 1
+                    if individu["espece"] == "Vide" and etat["Max_enfants_generation"] <= self.Max_enfants_generation and etat["Max_enfants_individu"] <= self.Max_enfants_individu: 
+                        ft_incrementer_naissance(self.Nom)                
+                        ft_naissance(grid_new, [x - 1, x, x + 1, x - 1, x + 1, x - 1, x, x + 1, x - 1, x, x + 1, x - 1, x + 1, x - 1, x, x + 1, x - 1, x, x + 1, x - 1, x + 1, x - 1, x, x + 1][i], [y - 1, y - 1, y - 1, y, y, y + 1, y + 1, y + 1, y - 1, y - 1, y - 1, y, y, y + 1, y + 1, y + 1, y - 1, y - 1, y - 1, y, y, y + 1, y + 1, y + 1][i], [z - 1, z - 1, z - 1, z - 1, z - 1, z - 1, z - 1, z - 1, z, z, z, z, z, z, z, z, z + 1, z + 1, z + 1, z + 1, z + 1, z + 1, z + 1, z + 1][i], self.Nom, self.Etat_a_la_naissance)
+                        etat["Max_enfants_generation"] += 1
+                        etat["Max_enfants_individu"] += 1
+            etat["Max_enfant_generation"] = self.Max_enfants_generation

@@ -1,0 +1,6 @@
+__pycache__
+.DS_Store
+save.txt
+.vscode
+*.json
+Stats_log.txt

@@ -1,0 +1,7 @@
+Config["EspeceList"]["Vide"] = Espece("Vide", "black", False, False, False, False, False, Config["NaissanceAlternative"], False, False, 0, 0, 0, [""], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, {})
+Config["EspeceList"]["1"] = Espece("1","green", True, True, False, True, True, 15, 3, 10, ["2"], 0, 0, 6, 3, {"Age_moyen" : 0, "Max_enfants_generation" : 0, "Max_enfants_individu" : 0, "Nourriture_par_generation" : 0, "Generation_sans_manger" : 0, "Mort" : False})
+Config["EspeceList"]["2"] = Espece("2","blue", True, True, False, True, True, 15, 3, 10, ["3"], 0, 0, 6, 3, {"Age_moyen" : 0, "Max_enfants_generation" : 0, "Max_enfants_individu" : 0, "Nourriture_par_generation" : 0, "Generation_sans_manger" : 0, "Mort" : False})
+Config["EspeceList"]["3"] = Espece("3","red", True, True, False, True, True, 15, 3, 10, ["4"], 0, 0, 6, 3, {"Age_moyen" : 0, "Max_enfants_generation" : 0, "Max_enfants_individu" : 0, "Nourriture_par_generation" : 0, "Generation_sans_manger" : 0, "Mort" : False})
+Config["EspeceList"]["4"] = Espece("4","yellow", True, True, False, True, True, 15, 3, 10, ["5"], 0, 0, 6, 3, {"Age_moyen" : 0, "Max_enfants_generation" : 0, "Max_enfants_individu" : 0, "Nourriture_par_generation" : 0, "Generation_sans_manger" : 0, "Mort" : False})
+Config["EspeceList"]["5"] = Espece("5","pink", True, True, False, True, True, 15, 3, 10, ["1"], 0, 0, 6, 3, {"Age_moyen" : 0, "Max_enfants_generation" : 0, "Max_enfants_individu" : 0, "Nourriture_par_generation" : 0, "Generation_sans_manger" : 0, "Mort" : False})
+Config["RepartitionList"] = ()

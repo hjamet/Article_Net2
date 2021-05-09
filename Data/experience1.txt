@@ -1,0 +1,3 @@
+Config["EspeceList"]["Vide"] = Espece("Vide", (0,0,0), False, False, False, False, False, Config["NaissanceAlternative"], False, False, 0, 0, 0, [""], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, {})
+Config["EspeceList"]["Solo"] = Espece("Solo", (255,0,0), False, True, False, True, False, False, True, True, 0, 1, 999999999999, [], 0, 0, 6, 0,9, 0, 0, 0, 0, 99, 0, {"Age_moyen" : 0, "Max_enfants_generation" : 0, "Max_enfants_individu" : 0, "Nourriture_par_generation" : 0, "Generation_sans_manger" : 0, "Mort" : False})
+Config["RepartitionList"] = (("Vide", 50), ("Solo", 50))
